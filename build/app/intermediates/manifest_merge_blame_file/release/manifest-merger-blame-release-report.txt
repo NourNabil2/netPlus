@@ -1,0 +1,300 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.web_view"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="35" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->N:\web_view\android\app\src\main\AndroidManifest.xml:3:5-66
+11-->N:\web_view\android\app\src\main\AndroidManifest.xml:3:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->N:\web_view\android\app\src\main\AndroidManifest.xml:4:5-78
+12-->N:\web_view\android\app\src\main\AndroidManifest.xml:4:22-76
+13    <uses-permission android:name="android.permission.WAKE_LOCK" />
+13-->N:\web_view\android\app\src\main\AndroidManifest.xml:5:5-67
+13-->N:\web_view\android\app\src\main\AndroidManifest.xml:5:22-65
+14    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+14-->N:\web_view\android\app\src\main\AndroidManifest.xml:6:5-93
+14-->N:\web_view\android\app\src\main\AndroidManifest.xml:6:22-91
+15    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+15-->N:\web_view\android\app\src\main\AndroidManifest.xml:7:5-76
+15-->N:\web_view\android\app\src\main\AndroidManifest.xml:7:22-74
+16
+17    <uses-feature android:name="android.hardware.screen.portrait" />
+17-->N:\web_view\android\app\src\main\AndroidManifest.xml:8:5-68
+17-->N:\web_view\android\app\src\main\AndroidManifest.xml:8:19-66
+18    <uses-feature android:name="android.hardware.screen.landscape" />
+18-->N:\web_view\android\app\src\main\AndroidManifest.xml:9:5-69
+18-->N:\web_view\android\app\src\main\AndroidManifest.xml:9:19-67
+19    <!--
+20         Required to query activities that can process text, see:
+21         https://developer.android.com/training/package-visibility and
+22         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+23
+24         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
+25    -->
+26    <queries>
+26-->N:\web_view\android\app\src\main\AndroidManifest.xml:62:5-67:15
+27        <intent>
+27-->N:\web_view\android\app\src\main\AndroidManifest.xml:63:9-66:18
+28            <action android:name="android.intent.action.PROCESS_TEXT" />
+28-->N:\web_view\android\app\src\main\AndroidManifest.xml:64:13-72
+28-->N:\web_view\android\app\src\main\AndroidManifest.xml:64:21-70
+29
+30            <data android:mimeType="text/plain" />
+30-->N:\web_view\android\app\src\main\AndroidManifest.xml:65:13-50
+30-->N:\web_view\android\app\src\main\AndroidManifest.xml:65:19-48
+31        </intent>
+32        <intent>
+32-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:8:9-10:18
+33            <action android:name="android.support.customtabs.action.CustomTabsService" />
+33-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:9:13-90
+33-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:9:21-87
+34        </intent>
+35    </queries>
+36
+37    <permission
+37-->[androidx.core:core:1.13.1] C:\Users\lenovo\.gradle\caches\transforms-3\b54dcaf335378a752c62fda49db9fdf5\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+38        android:name="com.example.web_view.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+38-->[androidx.core:core:1.13.1] C:\Users\lenovo\.gradle\caches\transforms-3\b54dcaf335378a752c62fda49db9fdf5\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+39        android:protectionLevel="signature" />
+39-->[androidx.core:core:1.13.1] C:\Users\lenovo\.gradle\caches\transforms-3\b54dcaf335378a752c62fda49db9fdf5\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+40
+41    <uses-permission android:name="com.example.web_view.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+41-->[androidx.core:core:1.13.1] C:\Users\lenovo\.gradle\caches\transforms-3\b54dcaf335378a752c62fda49db9fdf5\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+41-->[androidx.core:core:1.13.1] C:\Users\lenovo\.gradle\caches\transforms-3\b54dcaf335378a752c62fda49db9fdf5\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+42
+43    <application
+44        android:name="android.app.Application"
+44-->N:\web_view\android\app\src\main\AndroidManifest.xml:14:9-42
+45        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+45-->[androidx.core:core:1.13.1] C:\Users\lenovo\.gradle\caches\transforms-3\b54dcaf335378a752c62fda49db9fdf5\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+46        android:extractNativeLibs="true"
+47        android:hardwareAccelerated="true"
+47-->N:\web_view\android\app\src\main\AndroidManifest.xml:17:9-43
+48        android:icon="@mipmap/ic_launcher"
+48-->N:\web_view\android\app\src\main\AndroidManifest.xml:15:9-43
+49        android:label="NetPlus"
+49-->N:\web_view\android\app\src\main\AndroidManifest.xml:13:9-32
+50        android:usesCleartextTraffic="true" >
+50-->N:\web_view\android\app\src\main\AndroidManifest.xml:16:9-44
+51        <activity
+51-->N:\web_view\android\app\src\main\AndroidManifest.xml:19:9-40:20
+52            android:name="com.example.web_view.MainActivity"
+52-->N:\web_view\android\app\src\main\AndroidManifest.xml:20:13-41
+53            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+53-->N:\web_view\android\app\src\main\AndroidManifest.xml:25:13-163
+54            android:exported="true"
+54-->N:\web_view\android\app\src\main\AndroidManifest.xml:21:13-36
+55            android:hardwareAccelerated="true"
+55-->N:\web_view\android\app\src\main\AndroidManifest.xml:26:13-47
+56            android:launchMode="singleTop"
+56-->N:\web_view\android\app\src\main\AndroidManifest.xml:22:13-43
+57            android:taskAffinity=""
+57-->N:\web_view\android\app\src\main\AndroidManifest.xml:23:13-36
+58            android:theme="@style/LaunchTheme"
+58-->N:\web_view\android\app\src\main\AndroidManifest.xml:24:13-47
+59            android:windowSoftInputMode="adjustResize" >
+59-->N:\web_view\android\app\src\main\AndroidManifest.xml:27:13-55
+60
+61            <!--
+62                 Specifies an Android theme to apply to this Activity as soon as
+63                 the Android process has started. This theme is visible to the user
+64                 while the Flutter UI initializes. After that, this theme continues
+65                 to determine the Window background behind the Flutter UI.
+66            -->
+67            <meta-data
+67-->N:\web_view\android\app\src\main\AndroidManifest.xml:32:13-35:17
+68                android:name="io.flutter.embedding.android.NormalTheme"
+68-->N:\web_view\android\app\src\main\AndroidManifest.xml:33:15-70
+69                android:resource="@style/NormalTheme" />
+69-->N:\web_view\android\app\src\main\AndroidManifest.xml:34:15-52
+70
+71            <intent-filter>
+71-->N:\web_view\android\app\src\main\AndroidManifest.xml:36:13-39:29
+72                <action android:name="android.intent.action.MAIN" />
+72-->N:\web_view\android\app\src\main\AndroidManifest.xml:37:17-68
+72-->N:\web_view\android\app\src\main\AndroidManifest.xml:37:25-66
+73
+74                <category android:name="android.intent.category.LAUNCHER" />
+74-->N:\web_view\android\app\src\main\AndroidManifest.xml:38:17-76
+74-->N:\web_view\android\app\src\main\AndroidManifest.xml:38:27-74
+75            </intent-filter>
+76        </activity>
+77        <!--
+78             Don't delete the meta-data below.
+79             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+80        -->
+81        <meta-data
+81-->N:\web_view\android\app\src\main\AndroidManifest.xml:43:9-45:36
+82            android:name="android.webkit.WebView.EnableMediaPlaybackRequiresUserGesture"
+82-->N:\web_view\android\app\src\main\AndroidManifest.xml:44:13-89
+83            android:value="false" />
+83-->N:\web_view\android\app\src\main\AndroidManifest.xml:45:13-34
+84        <meta-data
+84-->N:\web_view\android\app\src\main\AndroidManifest.xml:46:9-48:35
+85            android:name="android.webkit.WebView.RenderPriority"
+85-->N:\web_view\android\app\src\main\AndroidManifest.xml:47:13-65
+86            android:value="HIGH" />
+86-->N:\web_view\android\app\src\main\AndroidManifest.xml:48:13-33
+87        <meta-data
+87-->N:\web_view\android\app\src\main\AndroidManifest.xml:49:9-51:32
+88            android:name="android.hardware.vulkan.level"
+88-->N:\web_view\android\app\src\main\AndroidManifest.xml:50:13-57
+89            android:value="1" />
+89-->N:\web_view\android\app\src\main\AndroidManifest.xml:51:13-30
+90        <meta-data
+90-->N:\web_view\android\app\src\main\AndroidManifest.xml:53:9-55:33
+91            android:name="flutterEmbedding"
+91-->N:\web_view\android\app\src\main\AndroidManifest.xml:54:13-44
+92            android:value="2" />
+92-->N:\web_view\android\app\src\main\AndroidManifest.xml:55:13-30
+93
+94        <activity
+94-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:14:9-18:47
+95            android:name="com.pichillilorenzo.flutter_inappwebview_android.in_app_browser.InAppBrowserActivity"
+95-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-112
+96            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"
+96-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:16:13-137
+97            android:exported="false"
+97-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:17:13-37
+98            android:theme="@style/AppTheme" />
+98-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:18:13-44
+99        <activity
+99-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:19:9-22:55
+100            android:name="com.pichillilorenzo.flutter_inappwebview_android.chrome_custom_tabs.ChromeCustomTabsActivity"
+100-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:20:13-120
+101            android:exported="false"
+101-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:21:13-37
+102            android:theme="@style/ThemeTransparent" />
+102-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:22:13-52
+103        <activity
+103-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:23:9-26:55
+104            android:name="com.pichillilorenzo.flutter_inappwebview_android.chrome_custom_tabs.TrustedWebActivity"
+104-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:24:13-114
+105            android:exported="false"
+105-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:25:13-37
+106            android:theme="@style/ThemeTransparent" />
+106-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:26:13-52
+107        <activity
+107-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:27:9-31:55
+108            android:name="com.pichillilorenzo.flutter_inappwebview_android.chrome_custom_tabs.ChromeCustomTabsActivitySingleInstance"
+108-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:28:13-134
+109            android:exported="false"
+109-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:29:13-37
+110            android:launchMode="singleInstance"
+110-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:30:13-48
+111            android:theme="@style/ThemeTransparent" />
+111-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:31:13-52
+112        <activity
+112-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:32:9-36:55
+113            android:name="com.pichillilorenzo.flutter_inappwebview_android.chrome_custom_tabs.TrustedWebActivitySingleInstance"
+113-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:33:13-128
+114            android:exported="false"
+114-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:34:13-37
+115            android:launchMode="singleInstance"
+115-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:35:13-48
+116            android:theme="@style/ThemeTransparent" />
+116-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:36:13-52
+117
+118        <receiver
+118-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:38:9-41:40
+119            android:name="com.pichillilorenzo.flutter_inappwebview_android.chrome_custom_tabs.ActionBroadcastReceiver"
+119-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:39:13-119
+120            android:enabled="true"
+120-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:40:13-35
+121            android:exported="false" />
+121-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:41:13-37
+122
+123        <meta-data
+123-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:43:9-45:36
+124            android:name="io.flutter.embedded_views_preview"
+124-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:44:13-61
+125            android:value="true" />
+125-->[:flutter_inappwebview_android] N:\web_view\build\flutter_inappwebview_android\intermediates\merged_manifest\release\AndroidManifest.xml:45:13-33
+126
+127        <uses-library
+127-->[androidx.window:window:1.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\000a2c3a61cf24c008113cd1f60e01dd\transformed\jetified-window-1.2.0\AndroidManifest.xml:23:9-25:40
+128            android:name="androidx.window.extensions"
+128-->[androidx.window:window:1.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\000a2c3a61cf24c008113cd1f60e01dd\transformed\jetified-window-1.2.0\AndroidManifest.xml:24:13-54
+129            android:required="false" />
+129-->[androidx.window:window:1.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\000a2c3a61cf24c008113cd1f60e01dd\transformed\jetified-window-1.2.0\AndroidManifest.xml:25:13-37
+130        <uses-library
+130-->[androidx.window:window:1.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\000a2c3a61cf24c008113cd1f60e01dd\transformed\jetified-window-1.2.0\AndroidManifest.xml:26:9-28:40
+131            android:name="androidx.window.sidecar"
+131-->[androidx.window:window:1.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\000a2c3a61cf24c008113cd1f60e01dd\transformed\jetified-window-1.2.0\AndroidManifest.xml:27:13-51
+132            android:required="false" />
+132-->[androidx.window:window:1.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\000a2c3a61cf24c008113cd1f60e01dd\transformed\jetified-window-1.2.0\AndroidManifest.xml:28:13-37
+133
+134        <provider
+134-->[androidx.emoji2:emoji2:1.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\ac76a3dae86bec3fd8d1dc4c0e6c26d2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+135            android:name="androidx.startup.InitializationProvider"
+135-->[androidx.emoji2:emoji2:1.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\ac76a3dae86bec3fd8d1dc4c0e6c26d2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+136            android:authorities="com.example.web_view.androidx-startup"
+136-->[androidx.emoji2:emoji2:1.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\ac76a3dae86bec3fd8d1dc4c0e6c26d2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+137            android:exported="false" >
+137-->[androidx.emoji2:emoji2:1.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\ac76a3dae86bec3fd8d1dc4c0e6c26d2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+138            <meta-data
+138-->[androidx.emoji2:emoji2:1.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\ac76a3dae86bec3fd8d1dc4c0e6c26d2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+139                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+139-->[androidx.emoji2:emoji2:1.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\ac76a3dae86bec3fd8d1dc4c0e6c26d2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+140                android:value="androidx.startup" />
+140-->[androidx.emoji2:emoji2:1.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\ac76a3dae86bec3fd8d1dc4c0e6c26d2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+141            <meta-data
+141-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\lenovo\.gradle\caches\transforms-3\890e6f98832f2864999309ccbe66fd9a\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+142                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+142-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\lenovo\.gradle\caches\transforms-3\890e6f98832f2864999309ccbe66fd9a\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+143                android:value="androidx.startup" />
+143-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\lenovo\.gradle\caches\transforms-3\890e6f98832f2864999309ccbe66fd9a\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+144            <meta-data
+144-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+145                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+145-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+146                android:value="androidx.startup" />
+146-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+147        </provider>
+148
+149        <receiver
+149-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+150            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+150-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+151            android:directBootAware="false"
+151-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+152            android:enabled="true"
+152-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+153            android:exported="true"
+153-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+154            android:permission="android.permission.DUMP" >
+154-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+155            <intent-filter>
+155-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+156                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+156-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+156-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+157            </intent-filter>
+158            <intent-filter>
+158-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+159                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+159-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+159-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+160            </intent-filter>
+161            <intent-filter>
+161-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+162                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+162-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+162-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+163            </intent-filter>
+164            <intent-filter>
+164-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+165                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+165-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+165-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lenovo\.gradle\caches\transforms-3\bc343e36d46993b7e9378fce0316c7ed\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+166            </intent-filter>
+167        </receiver>
+168    </application>
+169
+170</manifest>
