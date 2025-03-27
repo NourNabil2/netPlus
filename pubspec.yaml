@@ -39,6 +39,7 @@ dependencies:
   fluttertoast:
   connectivity_plus:
   permission_handler:
+  device_info_plus: ^9.0.3
   http:
 
 dev_dependencies:

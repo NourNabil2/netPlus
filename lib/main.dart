@@ -1,4 +1,6 @@
 import 'dart:developer';
+import 'dart:io';
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'HomePage.dart';
@@ -6,7 +8,7 @@ import 'HomePage.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Force landscape mode
+  // فرض الوضع الأفقي
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.landscapeLeft,
     DeviceOrientation.landscapeRight,
@@ -21,20 +23,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SplashScreen(), // أول شاشة بتظهر
+      home: SplashScreen(),
     );
   }
 }
 
-// شاشة الانتظار (Splash Screen)
+// شاشة التحميل
 class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  String macAddress = '';
-  String androidId = '';
+  String macAddress = 'Unknown MAC';
+  String androidId = 'Unknown ID';
 
   @override
   void initState() {
@@ -44,19 +46,19 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> _loadDeviceInfo() async {
     String? mac = await DeviceInfo.getMacAddress();
-    String? id = await DeviceInfo.getAndroidId();
+    String? id = await DeviceInfo.getAndroidOrIOSId();
 
     setState(() {
       macAddress = mac ?? 'Unknown MAC';
       androidId = id ?? 'Unknown ID';
     });
 
-    // بعد 2 ثانية، ينتقل إلى الصفحة الرئيسية
+    // الانتقال إلى الصفحة الرئيسية بعد 2 ثانية
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => WebPage(macAddress: macAddress, androidId: androidId),
+          builder: (context) => WebPage(identifierForVendor: androidId),
         ),
       );
     });
@@ -65,12 +67,12 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black, // لون الخلفية
+      backgroundColor: Colors.black,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const CircularProgressIndicator(color: Colors.yellow), // مؤشر التحميل
+            const CircularProgressIndicator(color: Colors.yellow),
             const SizedBox(height: 20),
             const Text(
               "جارِ تحميل...",
@@ -87,17 +89,33 @@ class _SplashScreenState extends State<SplashScreen> {
 class DeviceInfo {
   static const platform = MethodChannel('com.example.device_info');
 
-  static Future<String?> getAndroidId() async {
-    try {
-      final String? androidId = await platform.invokeMethod<String>('getAndroidId');
-      log('ANDROID_ID: $androidId');
-      return androidId;
-    } on PlatformException catch (e) {
-      log("Failed to get Android ID: ${e.message}", error: e);
-      return null;
+  /// استرجاع **Android ID** للأندرويد و **identifierForVendor** للـ iOS
+  static Future<String?> getAndroidOrIOSId() async {
+    final DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+
+    if (Platform.isAndroid) {
+      try {
+        final String? androidId = await platform.invokeMethod<String>('getAndroidId');
+        log('ANDROID_ID: $androidId');
+        return androidId;
+      } on PlatformException catch (e) {
+        log("Failed to get Android ID: ${e.message}", error: e);
+        return null;
+      }
+    } else if (Platform.isIOS) {
+      try {
+        IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
+        log('iOS identifierForVendor: ${iosInfo.identifierForVendor}');
+        return iosInfo.identifierForVendor; // iOS Vendor ID
+      } catch (e) {
+        log("Failed to get iOS identifier: $e");
+        return null;
+      }
     }
+    return null;
   }
 
+  /// استرجاع **MAC Address** (قد لا يعمل بسبب قيود الأمان في iOS)
   static Future<String?> getMacAddress() async {
     try {
       final String? macAddress = await platform.invokeMethod<String>('getMacAddress');

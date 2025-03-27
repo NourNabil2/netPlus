@@ -6,10 +6,10 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'web_service.dart';
 
 class WebPage extends StatefulWidget {
-  final String macAddress;
-  final String androidId;
 
-  const WebPage({super.key, required this.macAddress, required this.androidId});
+  final String identifierForVendor;
+
+  const WebPage({super.key, required this.identifierForVendor});
 
   @override
   State<WebPage> createState() => _WebPageState();
@@ -70,7 +70,7 @@ class _WebPageState extends State<WebPage> {
       }
 
       setState(() {
-        url = 'https://netplus.app/access.php?mac=${widget.macAddress}&id=${widget.androidId}';
+        url = 'https://netplus.app/access-ipa.php?identifierForVendor=${widget.identifierForVendor}';
       });
     } catch (e) {
       log("Error loading web page: $e");
