@@ -45,11 +45,11 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _loadDeviceInfo() async {
-    String? mac = await DeviceInfo.getMacAddress();
-    String? id = await DeviceInfo.getAndroidOrIOSId();
+
+    String? id = await DeviceInfo.getIOSId();
 
     setState(() {
-      macAddress = mac ?? 'Unknown MAC';
+
       androidId = id ?? 'Unknown ID';
     });
 
@@ -58,7 +58,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => WebPage(identifierForVendor: androidId),
+          builder: (context) => WebPage(identifierForVendor: id),
         ),
       );
     });
@@ -85,25 +85,13 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 }
 
-// كلاس استرجاع بيانات الجهاز
+
 class DeviceInfo {
-  static const platform = MethodChannel('com.example.device_info');
-
-  /// استرجاع **Android ID** للأندرويد و **identifierForVendor** للـ iOS
-  static Future<String?> getAndroidOrIOSId() async {
-    final DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-
-    if (Platform.isAndroid) {
+  /// استرجاع **identifierForVendor** للـ iOS فقط
+  static Future<String?> getIOSId() async {
+    if (Platform.isIOS) {
       try {
-        final String? androidId = await platform.invokeMethod<String>('getAndroidId');
-        log('ANDROID_ID: $androidId');
-        return androidId;
-      } on PlatformException catch (e) {
-        log("Failed to get Android ID: ${e.message}", error: e);
-        return null;
-      }
-    } else if (Platform.isIOS) {
-      try {
+        final deviceInfo = DeviceInfoPlugin();
         IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
         log('iOS identifierForVendor: ${iosInfo.identifierForVendor}');
         return iosInfo.identifierForVendor; // iOS Vendor ID
@@ -115,15 +103,4 @@ class DeviceInfo {
     return null;
   }
 
-  /// استرجاع **MAC Address** (قد لا يعمل بسبب قيود الأمان في iOS)
-  static Future<String?> getMacAddress() async {
-    try {
-      final String? macAddress = await platform.invokeMethod<String>('getMacAddress');
-      log('MAC_ADDRESS: $macAddress');
-      return macAddress;
-    } on PlatformException catch (e) {
-      log("Failed to get MAC address: ${e.message}", error: e);
-      return null;
-    }
-  }
 }
